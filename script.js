@@ -72,7 +72,7 @@ async function fetchSystemStatus() {
         renderSystems();
         updateOverallStatus();
     } catch (error) {
-        console.error('Fehler beim Abrufen der Systemstatus:', error);
+        console.error('Error Fetching Status:', error);
     }
 }
 
