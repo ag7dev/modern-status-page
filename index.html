@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://ag7-dev.de/favicon/favicon.ico" type="image/x-icon">
+    <title>System Status Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="alarm-banner" class="alarm-banner hidden">SYSTEM OUTAGE DETECTED</div>
+    <div class="container">
+        <h1 class="title">System Status</h1>
+        <div class="status-card">
+            <h2>Current Status <span class="live-badge">Live</span></h2>
+            <p id="status-message" class="status-message"></p>
+        </div>
+        <div class="systems-grid" id="systems-grid"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

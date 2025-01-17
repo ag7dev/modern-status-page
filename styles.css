@@ -1,0 +1,159 @@
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+}
+
+.status-card {
+    background-color: #111;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.status-card:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.status-card h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    color: #fff;
+}
+
+.live-badge {
+    background-color: #fff;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.status-message {
+    font-size: 1.2em;
+    min-height: 1.5em;
+    line-height: 1.6;
+}
+
+.systems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.system-card {
+    background-color: #111;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.system-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.system-card h3 {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.system-card h3 .icon {
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+    animation: blink 1s infinite;
+}
+
+.status-dot.operational { background-color: #2ecc71; }
+.status-dot.degraded { background-color: #f39c12; }
+.status-dot.outage { background-color: #e74c3c; }
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.alarm-banner {
+    background-color: #e74c3c;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    animation: blink 1s infinite;
+}
+
+.alarm-banner.hidden {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .systems-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .status-card, .system-card {
+        padding: 15px;
+    }
+    
+    .title {
+        font-size: 2em;
+    }
+}
+
